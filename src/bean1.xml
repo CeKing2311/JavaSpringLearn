@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    配置User对象的创建-->
+    <bean id="user" class="com.ceking.spring5.User">
+    </bean>
+    <!--    set方法注入属性-->
+    <bean id="book" class="com.ceking.spring5.Book">
+        <!--注入属性-->
+        <property name="name" value="辟邪剑谱"></property>
+        <property name="author" value="林平之"></property>
+        <property name="address">
+            <value><![CDATA[<<南京>>]]></value>
+        </property>
+    </bean>
+    <!--    有参构造注入属性-->
+    <bean id="orders" class="com.ceking.spring5.Orders">
+        <constructor-arg name="orderId" value="213123242"></constructor-arg>
+        <constructor-arg name="address" value="北京市丰台区"></constructor-arg>
+    </bean>
+
+
+</beans>
